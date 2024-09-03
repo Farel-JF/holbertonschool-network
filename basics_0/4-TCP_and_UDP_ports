@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
-## Script displays listening TCP and UDP.
-netstat -a
+# This script displays listening TCP and UDP.
+
+sudo netstat -tulnp | grep LISTEN
