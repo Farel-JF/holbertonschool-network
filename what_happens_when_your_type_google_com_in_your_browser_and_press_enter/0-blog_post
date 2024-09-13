@@ -1,0 +1,46 @@
+What Happens When You Type https://www.google.com and Press Enter
+When you type https://www.google.com into your browser and press Enter, a lot happens behind the scenes to load the Google homepage. In this post, we'll break down each of the steps involved, from your computer sending out the request to the Google server processing and responding with the page you see.
+
+1. DNS Request
+The first step is DNS (Domain Name System) resolution. Your browser needs to know the IP address associated with www.google.com to contact the correct server. DNS is like a phonebook that maps domain names to IP addresses. Here's how it works:
+
+Browser cache: Your browser checks its cache to see if it already knows the IP address of www.google.com.
+Operating system cache: If the browser doesn’t have it, the OS checks its own DNS cache.
+Router cache: If the OS doesn’t know, the request goes to your router, which may have the address stored.
+ISP DNS server: If no cached address is found, the request goes to the ISP’s DNS resolver, which eventually queries authoritative DNS servers until it finds Google’s IP address.
+2. TCP/IP Connection
+With the IP address of the Google server in hand, the browser initiates a TCP (Transmission Control Protocol) connection to establish reliable communication. TCP is responsible for ensuring that packets of data are sent and received in the right order without errors.
+
+To do this, a three-way handshake occurs:
+
+Your browser sends a SYN (synchronize) packet to the Google server.
+The Google server responds with a SYN-ACK (synchronize-acknowledge).
+Your browser replies with an ACK (acknowledge).
+Once the handshake is complete, data can flow between your browser and the server using the IP (Internet Protocol) to route the packets across the internet.
+
+3. Firewall
+As the request moves through the network, it may encounter various firewalls along the way, both at your end and on Google's infrastructure. Firewalls filter traffic to protect against malicious activity. The request is evaluated, and if it passes the firewall's security checks, it is forwarded to the appropriate destination.
+
+4. HTTPS/SSL
+The "S" in HTTPS means the communication is secure. Before any data is exchanged, your browser and the Google server perform an SSL/TLS handshake to establish an encrypted connection. This ensures that sensitive information (like passwords) cannot be intercepted by a third party.
+
+SSL Certificate: The Google server sends an SSL certificate to your browser. Your browser checks the certificate to verify that it’s communicating with the real Google.
+Session key: If everything looks good, both parties agree on a session key used to encrypt and decrypt the data sent back and forth.
+5. Load Balancer
+Now the request reaches Google’s infrastructure. To ensure reliability and scalability, Google uses a load balancer. A load balancer distributes incoming requests across multiple servers, preventing any single server from becoming overwhelmed. It decides which server is least busy and routes your request accordingly.
+
+6. Web Server
+Once routed to a specific server, the web server takes over. The web server (usually Nginx or Apache) processes the incoming HTTP request and handles static content such as HTML, CSS, and JavaScript files.
+
+7. Application Server
+If the request involves dynamic content (e.g., search results), the web server forwards the request to an application server. The application server executes code to generate dynamic content. In Google’s case, this might involve running complex search algorithms to fetch relevant search results for your query.
+
+8. Database
+If the application server needs to retrieve data, it queries a database. This could involve fetching user-specific information, search histories, or other data stored in a massive, distributed database system.
+
+9. Response Sent Back to Your Browser
+Once the application server has processed the request and fetched any necessary data, the final response (HTML, CSS, JavaScript) is sent back to your browser. Your browser then renders the page, which is the final result you see on your screen.
+
+Conclusion
+While it takes only a fraction of a second to load the Google homepage, the underlying process involves many complex steps. From DNS resolution to database queries, each part plays a critical role in making sure that your request is handled quickly and securely. Understanding these steps can give you a deep appreciation for how the web works.
+
