@@ -1,0 +1,19 @@
+1.Browser to DNS Resolver: Ensure the diagram shows a clear path from the Browser to the DNS Resolver. Add a label or arrow to illustrate the DNS query.
+
+2.DNS Resolution: Make sure there's an arrow or line indicating the DNS Resolver returning the IP address to the Browser.
+
+3.Request to IP: Verify that the Browser sends an HTTPS request to the server’s IP address. This should be depicted as an arrow or line leading from the Browser to the Server’s IP address.
+
+4..Traffic Encryption: Add a visual representation of encryption (like a lock or “SSL/TLS” label) along the path of the request to show that the connection is secure.
+
+5.Firewall: Include a symbol or label for the Firewall in the path before the request reaches the Server. This should be clearly marked.
+
+6.Load Balancer: Incorporate a Load Balancer in the diagram after the Firewall, showing how it directs traffic to multiple Web Servers.
+
+7.Web Server: Ensure there’s a section for Web Servers, with a clear path from the Load Balancer to these servers. If applicable, show arrows leading to an Application Server.
+
+8.Application Server: If included, depict the Application Server processing requests and, if needed, querying a Database.
+
+9.Response Path: Illustrate the response flowing back through the Web Server, Load Balancer, Firewall, and finally to the Browser.
+
+10.Final Touches: Make sure all elements are labeled clearly, and consider adding a legend or key if the diagram is complex.
